@@ -1,4 +1,4 @@
-name: Trigger Machine Learning Job with Pull Request
+name: Trigger Machine Learning Job with Merge Pull Request
 
 on: 
   pull_request:
