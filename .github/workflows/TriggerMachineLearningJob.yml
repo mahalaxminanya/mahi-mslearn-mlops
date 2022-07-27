@@ -1,4 +1,4 @@
-name: Create data asset
+name: Trigger Machine Learning Job
 
 on:
   workflow_dispatch:
