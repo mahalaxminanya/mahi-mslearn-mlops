@@ -20,7 +20,6 @@ jobs:
     - name: Trigger Azure Machine Learning Job to train
       run: | 
        az ml job create --file src/job.yml --resource-group rg-dev-mlops --workspace-name mlw-dev-mlops
-           - uses: Azure/aml-registermodel@v1
     - name: register model
       with:
         # required inputs
