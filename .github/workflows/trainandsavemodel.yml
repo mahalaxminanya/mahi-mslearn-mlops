@@ -38,8 +38,8 @@ jobs:
     - name: Trigger Azure Machine Learning Job to train
       id: test
       run: | 
-       echo "::set-output name=test::${az ml model list --resource-group rg-dev-mlops --workspace-name mlw-dev-mlops | jq.[].id)"
+       echo "::set-output name=testlist::${az ml model list --resource-group rg-dev-mlops --workspace-name mlw-dev-mlops | jq.[].id)"
     - name: Output
       run : |
-        echo ${{ steps.test.outputs.test}}
+        echo ${{ steps.test.outputs.testlist}}
    
