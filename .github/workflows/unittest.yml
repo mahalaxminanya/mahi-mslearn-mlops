@@ -16,7 +16,6 @@ jobs:
     - name: Install pytest and required modules
       run: |
         python -m pip install pytest
-        python -m pip install model
     - name: Run unit tests
       run: | 
-        python tests/test_train.py
+        pytest tests/test_train.py
