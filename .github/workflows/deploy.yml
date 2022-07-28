@@ -19,5 +19,5 @@ jobs:
         creds: ${{secrets.AZURE_CREDENTIALS}}
     - name: Deploy mlflow Model
       run: | 
-        az ml online-endpoint create --name diabetes-mlflow -f src/create-endpoint.yml
-        az ml online-deployment create --name mlflow-deployment --endpoint diabetes-mlflow -f src/mlflow-deployment.yml --all-traffic
+        az ml online-endpoint create --name diabetes-mlflow  --resource-group rg-dev-mlops --workspace-name mlw-dev-mlops -f src/create-endpoint.yml
+        az ml online-deployment create --name mlflow-deployment --endpoint diabetes-mlflow  --resource-group rg-dev-mlops --workspace-name mlw-dev-mlops -f src/mlflow-deployment.yml --all-traffic
