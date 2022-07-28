@@ -1,6 +1,6 @@
 $schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
 name: mlflow-deployment
-endpoint_name: mlflow-endpoint-mahi
+endpoint_name: mlflow-endpoint-mahi2
 model: azureml:my-model2@latest
 instance_type: Standard_DS2_v2
 instance_count: 1
