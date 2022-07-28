@@ -1,10 +1,6 @@
 $schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
 name: mlflow-deployment
-endpoint_name: mlflow-endpoint
-model:
-  name: my-model2
-  version: 1
-  path: model
-  type: mlflow_model
+endpoint_name: mlflow-endpoint-mahi
+model: azureml:my-model2@latest
 instance_type: Standard_F2s_v2
 instance_count: 1
