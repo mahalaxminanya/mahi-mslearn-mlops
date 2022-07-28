@@ -19,4 +19,4 @@ jobs:
         creds: ${{secrets.AZURE_CREDENTIALS}}
     - name: Deploy mlflow Model
       run: | 
-        az ml online-deployment create --name mlflow-deployment-mahi --endpoint diabetes-mlflow  --resource-group rg-dev-mlops --workspace-name mlw-dev-mlops -f src/deployment.yml --all-traffic
+        az ml online-deployment create --name mlflow-deployment-mahi2 --endpoint diabetes-mlflow  --resource-group rg-dev-mlops --workspace-name mlw-dev-mlops -f src/deployment.yml --all-traffic
