@@ -20,14 +20,8 @@ jobs:
     - name: Trigger Azure Machine Learning Job to train
       run: | 
        az ml job create --file src/job.yml --resource-group rg-dev-mlops --workspace-name mlw-dev-mlops
-    - name: register model
-      with:
-        # required inputs
-        azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
-        run_id:  ${{ steps.aml_run.outputs.run_id }}
-        experiment_name: ${{ steps.aml_run.outputs.experiment_name }}
-        # optional inputs
-        parameters_file: "registermodel.json"
+       az ml model create --name my-model --version 1 --path runs:/khaki_mangos_kfmml0y56g/model/ --type mlflow_model
        
+
   
     
