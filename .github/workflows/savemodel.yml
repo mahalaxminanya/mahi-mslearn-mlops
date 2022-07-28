@@ -1,0 +1,28 @@
+name: Train and Save Model
+
+on:
+  workflow_dispatch:
+    
+
+jobs:
+  list:
+    runs-on: ubuntu-latest
+    environment: Prod
+    steps:
+    - name: Check out repo
+      uses: actions/checkout@main
+    - name: Install az ml extension
+      run: az extension add -n ml -y
+    - name: Azure login
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS}}
+    - name: Trigger Azure Machine Learning Job to train
+      id: test
+      run: | 
+       echo "::set-output name=testlist::${az ml model list --resource-group rg-dev-mlops --workspace-name mlw-dev-mlops | jq .[].id)"
+    - name: Output
+      run : |
+        echo ${{ steps.test.outputs.testlist}}
+
+   
